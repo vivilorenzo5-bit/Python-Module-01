@@ -4,8 +4,8 @@ class Plant:
         self.height: float = 0.0
         self.age: int = 0
 
-    def grow(self) -> None:
-        self.height += 0.8
+    def grow(self, cm: float) -> None:
+        self.height += cm
 
     def age_one_day(self) -> None:
         self.age += 1
@@ -27,7 +27,7 @@ def main() -> None:
 
     for day in range(1, 8):
         print(f"=== Day {day} ===")
-        rose.grow()
+        rose.grow(0.8)
         rose.age_one_day()
         rose.show()
 
