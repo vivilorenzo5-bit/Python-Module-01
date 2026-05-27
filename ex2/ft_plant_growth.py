@@ -20,7 +20,7 @@ def main() -> None:
 
     rose = Plant()
     rose.name = "Rose"
-    rose.height = 25
+    rose.height = 25.0
     rose.age = 30
     initial_height = rose.height
     rose.show()
