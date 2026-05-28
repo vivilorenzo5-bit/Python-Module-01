@@ -97,17 +97,47 @@ class Vegetable(Plant):
             ) -> None:
         super().__init__(name, height, age)
         self._harvest_season: str = harvest_season
-        self._nutritional_value: int = 0
+        self._nutritional_value: float = 0.0
 
     def grow(self, cm: float) -> None:
         super().grow(cm)
-        self._nutritional_value += 1
+        self._nutritional_value += 0.5
 
     def age_one_day(self) -> None:
         super().age_one_day()
-        self._nutritional_value += 1
+        self._nutritional_value += 0.5
 
     def show(self) -> None:
         super().show()
-        print(f"Harvest season: {self._harvest_season}"
-              f"Nutritional value: {self._nutritional_value}")
+        print(f"Harvest season: {self._harvest_season}")
+        print(f"Nutritional value: {int(self._nutritional_value)}")
+
+
+def main() -> None:
+    print("=== Garden Plant Types ===")
+
+    print("=== Flower")
+    rose = Flower("Rose", 15.0, 10, "red")
+    rose.show()
+    print("[asking the rose to bloom]")
+    rose.bloom()
+    rose.show()
+
+    print("\n=== Tree")
+    oak = Tree("Oak", 200.0, 365, 5.0)
+    oak.show()
+    print("[asking the oak to produce shade]")
+    oak.produce_shade()
+
+    print("\n=== Vegetable")
+    tomato = Vegetable("Tomato", 5.0, 10, "April")
+    tomato.show()
+    print("[make tomato grow and age for 20 days]")
+    for _ in range(20):
+        tomato.grow(2.1)
+        tomato.age_one_day()
+    tomato.show()
+
+
+if __name__ == "__main__":
+    main()
