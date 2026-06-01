@@ -207,7 +207,7 @@ def main() -> None:
     rose.bloom()
     rose.grow(8.0)
     rose.show()
-    print(["statistics for Rose"])
+    print("[statistics for Rose]")
     display_plant_stats(rose)
 
     print("\n=== Tree")
